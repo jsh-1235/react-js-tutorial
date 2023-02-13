@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import styles from "../../Common.module.css";
+import styles from "../../Script.module.css";
 
 export default function Script8({ ...props }) {
   const [name, setName] = useState({});
@@ -44,7 +44,7 @@ export default function Script8({ ...props }) {
           {items.map((item) => {
             return (
               <li key={item.func.name}>
-                <div className={styles.description_container}>
+                <div className={styles.menu}>
                   <button className="button" name={item.func.name} onClick={handleClick}>
                     {item.title}
                   </button>

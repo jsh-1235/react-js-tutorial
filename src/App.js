@@ -2,7 +2,7 @@ import "./App.css";
 
 import React, { Suspense } from "react";
 
-import { Route, Routes, Redirect } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 
@@ -29,8 +29,6 @@ function App() {
               <Route path="/dom/*" element={<DOM pathname="/dom" />}>
                 <Route path=":id" element={<DOM />} />
               </Route>
-              {/* <Route path="/js/*" element={<JS pathname="/js" />} />
-              <Route path="/dom/*" element={<DOM pathname="/dom" />} /> */}
               <Route path="/none" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

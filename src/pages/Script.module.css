@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+
+  background-color: #cfd8dc;
+}
+
+.title {
+  padding: 20px;
+  align-self: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.title+span {
+  height: 2px;
+  background-color: #102027;
+  margin: 10px;
+}
+
+.note {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.note>ul {
+  padding-left: 20px;
+}
+
+.note>ul[title]::before {
+  content: attr(title);
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #102027;
+  margin: 10px;
+}
+
+.note>ul>li {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  text-align: right;
+  font-size: 1rem;
+  margin: 10px;
+}
