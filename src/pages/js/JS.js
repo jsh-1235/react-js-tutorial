@@ -22,55 +22,55 @@ import Script13 from "./contents/Script13";
 
 const pages = [
   {
-    url: "Object Destructuring",
+    url: "object-destructuring",
     page: <Script1 title={"Object Destructuring"} />,
   },
   {
-    url: "Generator",
+    url: "generator",
     page: <Script2 title={"Generator"} />,
   },
   {
-    url: "Template Literal",
+    url: "template-literal",
     page: <Script3 title={"Template Literal"} />,
   },
   {
-    url: "Function",
+    url: "function",
     page: <Script4 title={"Function"} />,
   },
   {
-    url: "Promise",
+    url: "promise",
     page: <Script5 title={"Promise"} />,
   },
   {
-    url: "Async-await",
-    page: <Script6 title={"Async-await"} />,
+    url: "async-await",
+    page: <Script6 title={"async await"} />,
   },
   {
-    url: "Callback",
+    url: "callback",
     page: <Script7 title={"Callback"} />,
   },
   {
-    url: "Variable",
+    url: "variable",
     page: <Script8 title={"Variable"} />,
   },
   {
-    url: "Hoisting",
+    url: "hoisting",
     page: <Script9 title={"Hoisting"} />,
   },
   {
-    url: "Closure",
+    url: "closure",
     page: <Script10 title={"Closure"} />,
   },
   {
-    url: "Syntax",
+    url: "syntax",
     page: <Script11 title={"Syntax"} />,
   },
   {
-    url: "Spread Operator",
+    url: "spread-operator",
     page: <Script12 title={"Spread Operator"} />,
   },
   {
-    url: "Array Destructuring",
+    url: "array-destructuring",
     page: <Script13 title={"Array Destructuring"} />,
   },
 ];
