@@ -128,7 +128,7 @@ export default function JS({ ...props }) {
           <button className="button" name="home" onClick={handleClick}>
             home
           </button>
-          <button className="button" name="clear" onClick={handleClick}>
+          <button className="button" name="back" onClick={handleClick}>
             back
           </button>
         </div>
