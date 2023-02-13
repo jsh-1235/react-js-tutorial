@@ -1,0 +1,13 @@
+.container {
+  align-self: center;
+  justify-self: center;
+  grid-column: 1 / span 2;
+}
+
+.container>span {
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  word-spacing: 0rem;
+  color: black;
+  text-transform: uppercase;
+}
