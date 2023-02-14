@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School</title>
+</head>
+
+<body>
+  <div>
+    <button id="event">Event</button>
+    <script>
+      const human = {
+        name: "정승훈",
+        age: 40,
+        introduce: function () {
+          console.log(this, typeof this);
+        },
+        child: {
+          name: "정순",
+          age: "13",
+          introduce: function () {
+            console.log(this, typeof this);
+          },
+        },
+        parent: {
+          name: "정태균",
+          age: "73",
+          introduce: () => {
+            console.log(this, typeof this);
+          },
+        },
+      };
+
+      console.log(this);
+
+      human.introduce();
+
+      const temp = human;
+
+      temp.introduce();
+
+      document.querySelector("#event").addEventListener("click", (e) => {
+        console.log(this);
+        console.log(e.target);
+
+        human.introduce();
+        human.child.introduce();
+        human.parent.introduce();
+      })
+    </script>
+  </div>
+</body>
+
+</html>
