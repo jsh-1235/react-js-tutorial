@@ -1,32 +1,30 @@
 .title {
-  height: 100%;
-
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
+  flex-wrap: nowrap;
   align-content: center;
   justify-content: center;
   align-items: center;
-
+  height: 100%;
+  color: white;
   font-size: 2rem;
   font-weight: 500;
+  text-transform: uppercase;
+  text-indent: 0px;
   letter-spacing: 0.5rem;
   word-spacing: 0rem;
-  color: white;
-  text-transform: uppercase;
 }
 
 .menu {
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: row;
+  flex-wrap: nowrap;
   align-content: center;
   justify-content: space-around;
   align-items: center;
-
   background-color: #37474f;
   color: white;
-
+  font-size: 1rem;
   list-style-type: none;
 }
 

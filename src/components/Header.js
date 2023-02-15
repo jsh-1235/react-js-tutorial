@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { connect } from "react-redux";
 
-const urls = ["js", "syntax", "dom", "bom"];
+const urls = ["js", "syntax", "api", "dom", "bom"];
 
 function mapStateToProps(state) {
   return {
@@ -50,7 +50,7 @@ function Header({ ...props }) {
   return (
     <>
       <div className={styles.title}>
-        <Link className="text-link" to="/">
+        <Link className="title-link" to="/">
           {props.url.title}
         </Link>
       </div>
@@ -58,7 +58,7 @@ function Header({ ...props }) {
         {urls.map((url, i) => {
           return (
             <li key={i}>
-              <Link className="list-link" to={`${url}`}>
+              <Link className="menu-link" to={`${url}`}>
                 {url}
               </Link>
             </li>

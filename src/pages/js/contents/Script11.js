@@ -38,7 +38,7 @@ export default function Script11({ ...props }) {
   return (
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
-      <span />
+      <span className={styles.border} />
       <div className={styles.note}>
         <ul title={name.title}>
           {items.map((item) => {

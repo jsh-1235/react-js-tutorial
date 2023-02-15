@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import styles from "../../Script.module.css";
 
-export default function Script9({ ...props }) {
+export default function Script6({ ...props }) {
   const [name, setName] = useState({});
 
   const handler = useCallback(() => {
@@ -26,6 +26,8 @@ export default function Script9({ ...props }) {
 
   const handleClick = (e) => {
     // console.clear();
+
+    console.log(this);
 
     setName({
       func: e.target.name,
@@ -56,63 +58,46 @@ export default function Script9({ ...props }) {
         </ul>
       </div>
       <div className={styles.note}>
-        <ul title="Summary">
-          <li>Hoisting is JavaScript's default behavior of moving declarations to the top.</li>
-        </ul>
+        <ul title="Summary"></ul>
       </div>
     </div>
   );
 }
 
-const fun1 = () => {
-  console.log("정의되지 않은 변수도 사용이 가능하다.");
+const fun1 = () => {};
 
-  console.log(number);
+const fun2 = () => {};
 
-  var number = 1234;
+const fun3 = () => {};
 
-  console.log(number);
-};
+const fun4 = () => {};
 
-const fun2 = () => {
-  console.log("for 문을 벗어나도 변수가 사라지지 않는다.");
-
-  for (var i = 0; i < 10; i++) {
-    console.log(i);
-  }
-
-  console.log(`i = ${i}`);
-};
-
-const fun3 = () => {
-  try {
-    console.log("const, let은 호이스팅이 발생하지 않는다.");
-
-    console.log(number);
-
-    const number = 1234;
-    // let number = 1234;
-
-    console.log(number);
-  } catch (e) {
-    console.error(e.message);
-  }
-};
+const fun5 = () => {};
 
 const items = [
   {
-    title: "Hoisting 1",
-    description: "정의되지 않은 변수도 사용이 가능하다.",
+    title: "1",
+    description: "",
     func: fun1,
   },
   {
-    title: "Hoisting 2",
-    description: "for 문을 벗어나도 변수가 사라지지 않는다.",
+    title: "2",
+    description: "",
     func: fun2,
   },
   {
-    title: "Hoisting 3",
-    description: "const, let은 호이스팅이 발생하지 않는다.",
+    title: "3",
+    description: "",
     func: fun3,
+  },
+  {
+    title: "4",
+    description: "",
+    func: fun4,
+  },
+  {
+    title: "5",
+    description: "",
+    func: fun5,
   },
 ];

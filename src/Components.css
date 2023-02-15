@@ -1,43 +1,48 @@
 :root {
   --component-font-size: 1rem;
-  --component-height: calc(var(--component-font-size) * 2.5);
-  --component-border-radius: 4px;
+  --component-height: calc(var(--component-font-size) * 2);
+  --component-border-radius: 0px;
 }
 
-.text-link {
-  text-decoration: inherit;
+.title-link {
   color: white;
+  text-decoration: inherit;
 }
 
-.text-link:hover {
+.title-link:hover {
   color: #42a5f5;
   transition-property: color;
   transition-duration: 0.5s;
 }
 
-.text-link:active {
+.title-link:active {
   color: #0077c2;
   transition-property: color;
   transition-duration: 0.5s;
 }
 
-.list-link {
+.menu-link {
   display: block;
-  text-decoration: inherit;
   color: white;
-  text-transform: uppercase;
+  font-size: 1rem;
   font-weight: bold;
+  text-decoration: inherit;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
   text-align: center;
   padding: 10px;
+  overflow: hidden;
 }
 
-.list-link:hover {
+.menu-link:hover {
   background-color: #42a5f5;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
-.list-link:active {
+.menu-link:active {
   background-color: #0077c2;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -45,14 +50,18 @@
 
 .button {
   min-width: calc(var(--component-font-size) * 6);
-  height: var(--component-height);
+  min-height: var(--component-height);
   border: none;
   border-radius: var(--component-border-radius);
   background-color: #85bb5c;
   color: white;
   font-size: var(--component-font-size);
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
   padding: 10px;
+  overflow: hidden;
 }
 
 .button:hover {
@@ -71,4 +80,18 @@
 .button:disabled {
   background-color: #455a64;
   color: #cfd8dc;
+}
+
+@media only screen and (max-width: 768px) {
+  .title-link {
+    font-size: 1.25rem;
+  }
+
+  .menu-link {
+    font-size: 0.5rem;
+  }
+
+  :root {
+    --component-font-size: 0.5rem;
+  }
 }

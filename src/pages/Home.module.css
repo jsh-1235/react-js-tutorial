@@ -5,9 +5,9 @@
 }
 
 .container>span {
+  color: black;
   font-size: 4rem;
+  text-transform: uppercase;
   letter-spacing: 1rem;
   word-spacing: 0rem;
-  color: black;
-  text-transform: uppercase;
 }

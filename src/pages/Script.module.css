@@ -4,40 +4,41 @@
   align-content: stretch;
   justify-content: stretch;
   align-items: stretch;
-
   background-color: #cfd8dc;
 }
 
 .title {
-  padding: 20px;
   align-self: center;
   font-size: 2rem;
   text-transform: uppercase;
+  padding: 10px;
 }
 
-.title+span {
+.border {
   height: 2px;
-  background-color: #102027;
-  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0px 10px 0px 10px;
 }
 
 .note {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding: 0px;
   margin: 10px;
 }
 
 .note>ul {
-  padding-left: 20px;
+  padding-left: 0px;
+  list-style-type: none;
 }
 
 .note>ul[title]::before {
-  content: attr(title);
   display: block;
-  text-align: center;
-  font-size: 1.5rem;
   color: #102027;
+  font-size: 1.5rem;
+  text-align: center;
   margin: 10px;
+  content: attr(title);
 }
 
 .note>ul>li {
@@ -54,7 +55,36 @@
 }
 
 .description {
-  text-align: right;
   font-size: 1rem;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
+  text-align: right;
   margin: 10px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .border {
+    display: none;
+  }
+
+  .note>ul[title]::before {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.5rem;
+    text-align: right;
+    margin: 10px;
+  }
+
+  .note>ul>li {
+    font-size: 0.5rem;
+    padding: 10px;
+  }
 }

@@ -10,7 +10,7 @@ export default function Linker({ to, children, ...props }) {
 
   return (
     <li>
-      <Link className="list-link" style={{ backgroundColor: match ? "#85bb5c" : null }} to={to} {...props}>
+      <Link className="menu-link" style={{ backgroundColor: match ? "#85bb5c" : null }} to={to} {...props}>
         {children}
         {/* {children} {match && " (active)"} */}
       </Link>

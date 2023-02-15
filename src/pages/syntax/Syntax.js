@@ -7,11 +7,51 @@ import { useParams } from "react-router";
 import Linker from "../../components/Linker";
 
 import Script1 from "./contents/Script1";
+import Script2 from "./contents/Script2";
+import Script3 from "./contents/Script3";
+import Script4 from "./contents/Script4";
+import Script5 from "./contents/Script5";
+import Script6 from "./contents/Script6";
+import Script7 from "./contents/Script7";
+import Script8 from "./contents/Script8";
+import Script9 from "./contents/Script9";
 
 const pages = [
   {
     url: "this",
     page: <Script1 title={"this"} />,
+  },
+  {
+    url: "script",
+    page: <Script2 title={"script"} />,
+  },
+  {
+    url: "variable",
+    page: <Script3 title={"variable"} />,
+  },
+  {
+    url: "operator",
+    page: <Script4 title={"operator"} />,
+  },
+  {
+    url: "function",
+    page: <Script5 title={"function"} />,
+  },
+  {
+    url: "class",
+    page: <Script6 title={"class"} />,
+  },
+  {
+    url: "object",
+    page: <Script7 title={"object"} />,
+  },
+  {
+    url: "array",
+    page: <Script8 title={"array"} />,
+  },
+  {
+    url: "immutable",
+    page: <Script9 title={"immutable"} />,
   },
 ];
 
