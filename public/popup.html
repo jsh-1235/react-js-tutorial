@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup</title>
+  <style>
+    :root {
+      --footer-hight: 48px;
+      --header-hight: calc(48px * 2);
+    }
+
+    * {
+      font-family: 'Rajdhani', sans-serif;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: stretch;
+      justify-content: center;
+      align-items: center;
+      height: var(--header-hight);
+      background-color: #001529;
+      color: white;
+      font-size: 2rem;
+      padding: 0px;
+    }
+
+    .main {
+      display: grid;
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+      justify-content: stretch;
+      align-items: stretch;
+      height: calc(100vh - var(--header-hight) - var(--footer-hight));
+      margin: 0px;
+      overflow: auto;
+    }
+
+    .footer {
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: var(--footer-hight);
+      bottom: 0;
+      left: 0;
+      background-color: #001529;
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0px;
+    }
+
+    #title {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    #list {
+      background-color: #9ea7aa;
+      padding: 20px;
+    }
+
+    #list>li {
+      margin: 10px;
+      text-transform: uppercase;
+      color: white;
+      font-size: 0.5rem;
+    }
+
+    #list>li:nth-child(2) {
+      color: #fdd835;
+    }
+
+    #content {
+      color: #001529;
+      font-size: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 20px;
+    }
+  </style>
+  <script>
+    window.onload = (e) => {
+      console.log(window.name);
+
+      window.document.getElementById("title").innerText = window.name;
+    }
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div id="title">Popup</div>
+  </header>
+  <main class="main">
+    <ul id="list">
+      <li>alert</li>
+      <li>prompt</li>
+      <li>confirm</li>
+      <li>window.open</li>
+    </ul>
+    <div id="content">message</div>
+  </main>
+  <footer class="footer">It is ©2018 Created by BT Inc</footer>
+</body>
+
+</html>

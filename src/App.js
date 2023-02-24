@@ -11,7 +11,9 @@ const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const Syntax = React.lazy(() => import("./pages/syntax/Syntax"));
 const JS = React.lazy(() => import("./pages/js/JS"));
+const API = React.lazy(() => import("./pages/api/API"));
 const DOM = React.lazy(() => import("./pages/dom/DOM"));
+const BOM = React.lazy(() => import("./pages/bom/BOM"));
 
 function App() {
   return (
@@ -30,8 +32,14 @@ function App() {
               <Route path="/js/*" element={<JS pathname="/js" />}>
                 <Route path=":id" element={<JS />} />
               </Route>
+              <Route path="/api/*" element={<API pathname="/api" />}>
+                <Route path=":id" element={<API />} />
+              </Route>
               <Route path="/dom/*" element={<DOM pathname="/dom" />}>
                 <Route path=":id" element={<DOM />} />
+              </Route>
+              <Route path="/bom/*" element={<BOM pathname="/bom" />}>
+                <Route path=":id" element={<BOM />} />
               </Route>
               <Route path="/none" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />

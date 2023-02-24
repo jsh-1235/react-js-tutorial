@@ -15,6 +15,11 @@ import Script6 from "./contents/Script6";
 import Script7 from "./contents/Script7";
 import Script8 from "./contents/Script8";
 import Script9 from "./contents/Script9";
+import Script10 from "./contents/Script10";
+import Script11 from "./contents/Script11";
+import Script12 from "./contents/Script12";
+import Script13 from "./contents/Script13";
+import Script14 from "./contents/Script14";
 
 const pages = [
   {
@@ -38,20 +43,40 @@ const pages = [
     page: <Script5 title={"function"} />,
   },
   {
-    url: "class",
-    page: <Script6 title={"class"} />,
+    url: "array",
+    page: <Script6 title={"array"} />,
   },
   {
     url: "object",
     page: <Script7 title={"object"} />,
   },
   {
-    url: "array",
-    page: <Script8 title={"array"} />,
+    url: "class",
+    page: <Script8 title={"class"} />,
+  },
+  {
+    url: "callback",
+    page: <Script9 title={"callback"} />,
+  },
+  {
+    url: "promise",
+    page: <Script10 title={"promise"} />,
+  },
+  {
+    url: "async_await",
+    page: <Script11 title={"async await"} />,
+  },
+  {
+    url: "standard_built-in_object",
+    page: <Script12 title={"Standard Built-in Object"} />,
+  },
+  {
+    url: "oop",
+    page: <Script13 title={"oop"} />,
   },
   {
     url: "immutable",
-    page: <Script9 title={"immutable"} />,
+    page: <Script14 title={"immutable"} />,
   },
 ];
 
@@ -105,10 +130,10 @@ export default function Syntax({ ...props }) {
       </ul>
       <div className={styles.content}>
         <div className={styles.menu}>
-          <button className="button" name="home" onClick={handleClick}>
+          <button className="button uppercase" name="home" onClick={handleClick}>
             home
           </button>
-          <button className="button" name="back" onClick={handleClick}>
+          <button className="button uppercase" name="back" onClick={handleClick}>
             back
           </button>
         </div>

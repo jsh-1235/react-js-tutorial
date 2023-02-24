@@ -3,6 +3,7 @@ import styles from "../../Script.module.css";
 
 export default function Script1({ ...props }) {
   const [name, setName] = useState({});
+  const [description, setDescription] = useState("");
 
   const handler = useCallback(() => {
     const result = items.filter((item) => item.func.name === name.func);
@@ -35,14 +36,39 @@ export default function Script1({ ...props }) {
     });
   };
 
+  const handleDescription = (func) => {
+    console.clear();
+
+    const result = func.toString();
+
+    setDescription(result);
+
+    console.log(result);
+  };
+
   console.log("props", props);
 
   return (
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
         <ul title={name.title}>
+          <div className={styles.summary}>
+            <details open>
+              <summary>summary</summary>
+              <div className={styles.summary_container}>
+                <div className={styles.summary_title}>this context</div>
+                <div className={styles.summary_description}>this는 함수 내에서 함수 호출 맥락(context)를 의미한다.</div>
+                <div className={styles.summary_description}>맥락이라는 것은 상황에 따라서 달라진다는 의미인데 즉 함수를 어떻게 호출하느냐에 따라서 this가 가르키는 대상이 달라진다는 뜻이다.</div>
+                <div className={styles.summary_description}>일반 함수의 "this"는 함수를 호출한 객체이다.</div>
+                <div className={styles.summary_description}>화살표 함수에서는 "this"의 대상이 바뀌지 않는다.</div>
+                <div className={styles.summary_description}>화살표 함수는 this를 생성하지 않는다.</div>
+                <div className={styles.summary_title}>bind()</div>
+                <div className={styles.summary_description}>method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.</div>
+              </div>
+            </details>
+          </div>
           {items.map((item) => {
             return (
               <li key={item.func.name}>
@@ -50,20 +76,17 @@ export default function Script1({ ...props }) {
                   <button className="button" name={item.func.name} onClick={handleClick}>
                     {item.title}
                   </button>
-                  <div className={styles.description}>{item.description}</div>
+                  <div className={styles.description}>
+                    <span data={item.func.name} onClick={(e) => handleDescription(item.func)}>
+                      {item.description}
+                    </span>
+                  </div>
                 </div>
               </li>
             );
           })}
         </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>일반 함수의 "this"는 함수를 호출한 객체이다.</li>
-          <li>화살표 함수에서는 "this"의 대상이 바뀌지 않는다.</li>
-          <li>화살표 함수는 this를 생성하지 않는다.</li>
-          <li>The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.</li>
-        </ul>
+        {description && <pre className={styles.pre}>{description}</pre>}
       </div>
     </div>
   );

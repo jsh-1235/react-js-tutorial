@@ -9,19 +9,59 @@ import Linker from "../../components/Linker";
 import Script1 from "./contents/Script1";
 import Script2 from "./contents/Script2";
 import Script3 from "./contents/Script3";
+import Script4 from "./contents/Script4";
+import Script5 from "./contents/Script5";
+import Script6 from "./contents/Script6";
+import Script7 from "./contents/Script7";
+import Script8 from "./contents/Script8";
+import Script9 from "./contents/Script9";
+import Script10 from "./contents/Script10";
+import Script11 from "./contents/Script11";
 
 const pages = [
   {
-    url: "a",
-    page: <Script1 />,
+    url: "html",
+    page: <Script1 title={"html"} />,
   },
   {
-    url: "b",
-    page: <Script2 />,
+    url: "find",
+    page: <Script2 title={"find"} />,
   },
   {
-    url: "c",
-    page: <Script3 />,
+    url: "crud",
+    page: <Script3 title={"crud"} />,
+  },
+  {
+    url: "elements_node",
+    page: <Script4 title={"elements_node"} />,
+  },
+  {
+    url: "attribute_node",
+    page: <Script5 title={"attribute_node"} />,
+  },
+  {
+    url: "character_data_node",
+    page: <Script6 title={"character_data_node"} />,
+  },
+  {
+    url: "document_node",
+    page: <Script7 title={"document_node"} />,
+  },
+  {
+    url: "css",
+    page: <Script8 title={"css"} />,
+  },
+  {
+    url: "jquery",
+    page: <Script9 title={"jquery"} />,
+  },
+  {
+    url: "jquery_node",
+    page: <Script10 title={"jquery_node"} />,
+  },
+  {
+    url: "events",
+    page: <Script11 title={"events"} />,
   },
 ];
 
@@ -88,7 +128,7 @@ export default function DOM({ ...props }) {
               return <Route key={i} path={`/${page.url}`} element={page.page} />;
             })}
             <Route path="*" element={<div>404 Not Found</div>} />
-            {/* <Route path="*" element={<Navigate to="/" />} /> */}
+            {/* <Route path="*" element={<Navigate to="/none" />} /> */}
           </Routes>
         </Suspense>
       </div>

@@ -39,7 +39,16 @@ export default function Script7({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>callback</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -54,9 +63,6 @@ export default function Script7({ ...props }) {
             );
           })}
         </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary"></ul>
       </div>
     </div>
   );

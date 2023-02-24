@@ -39,7 +39,18 @@ export default function Script4({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>매개변수에 기본값을 줄 수 있고, 나머지 매개변수를 통해 가변 길이 매개 변수를 좀 더 명시적으로 표현할 수 있다.</div>
+              <div className={styles.summary_description}>명명된 매개변수(named parameter)를 통해서 함수를 호출하는 코드는 가독성이 월등히 좋아졌다.</div>
+              <div className={styles.summary_description}>화살표 함수(arrow function)가 추가되면서 함수 코드가 간결해졌고, this 바인딩에 대한 고민을 덜 수 있다.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,13 +64,6 @@ export default function Script4({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>매개변수에 기본값을 줄 수 있고, 나머지 매개변수를 통해 가변 길이 매개 변수를 좀 더 명시적으로 표현할 수 있다.</li>
-          <li>명명된 매개변수(named parameter)를 통해서 함수를 호출하는 코드는 가독성이 월등히 좋아졌다.</li>
-          <li>화살표 함수(arrow function)가 추가되면서 함수 코드가 간결해졌고, this 바인딩에 대한 고민을 덜 수 있다.</li>
         </ul>
       </div>
     </div>

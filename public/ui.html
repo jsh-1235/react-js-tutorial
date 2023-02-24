@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI</title>
+  <style>
+    :root {
+      --footer-hight: 48px;
+      --header-hight: calc(48px * 2);
+    }
+
+    * {
+      font-family: 'Rajdhani', sans-serif;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: stretch;
+      justify-content: center;
+      align-items: center;
+      height: var(--header-hight);
+      background-color: #001529;
+      color: white;
+      font-size: 2rem;
+      padding: 0px;
+    }
+
+    .main {
+      display: grid;
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+      justify-content: stretch;
+      align-items: stretch;
+      height: calc(100vh - var(--header-hight) - var(--footer-hight));
+      margin: 10px;
+      overflow: auto;
+    }
+
+    .footer {
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: var(--footer-hight);
+      bottom: 0;
+      left: 0;
+      background-color: #001529;
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0px;
+    }
+
+    article {
+      border: 0.5px solid #718792;
+      border-radius: 4px;
+      padding: 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    HTML
+  </header>
+  <main class="main">
+    <article>
+      <details>
+        <summary>summary</summary>
+        <ul>
+          <li>details 1</li>
+          <li>details 2</li>
+          <li>details 3</li>
+        </ul>
+      </details>
+    </article>
+    <article>
+      <label for="language-list">Choose a Language</label>
+      <input list="languages" id="language-list" name="language-list" />
+      <datalist id="languages">
+        <option value="html">
+        <option value="css">
+        <option value="js">
+        <option value="react">
+        <option value="node.js">
+      </datalist>
+    </article>
+    <article>
+      <picture>
+        <source media="(max-width: 764px)" srcset="./jellyfish.jpg">
+        <source media="(min-width:765px)" srcset="./puffins.jpg">
+        <img src="./jellyfish.jpg" width="200px" height="200px" alt="Jellyfish" title="Jellyfish">
+      </picture>
+    </article>
+    <article>
+      <iframe class="item" src="https://opentutorials.org" width="400px" height="400px" seamless></iframe>
+      <iframe class="item" src="./popup.html" width="400px" height="400px" sandbox seamless></iframe>
+    </article>
+  </main>
+  <footer class="footer">It is ©2018 Created by BT Inc</footer>
+  <script>
+    window.matchMedia("(max-width: 764px)").addEventListener("change", (e) => {
+      console.log("max-width: 764px", window.innerWidth, window.innerHeight);
+
+      window.document.getElementsByTagName("img")[0].setAttribute("title", window.innerWidth <= 764 ? "Jellyfish" : "puffins")
+
+      console.log(window.document.getElementsByTagName("img")[0].getAttribute("title"));
+    })
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+      console.log('DOMContentLoaded');
+    });
+
+    window.addEventListener("load", function (event) {
+      console.log('load');
+    });
+  </script>
+</body>
+
+</html>

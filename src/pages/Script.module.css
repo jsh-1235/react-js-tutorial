@@ -1,3 +1,7 @@
+:root {
+  --content-border-color: rgba(0, 0, 0, 0.1);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -16,34 +20,66 @@
 
 .border {
   height: 2px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--content-border-color);
   margin: 0px 10px 0px 10px;
 }
 
-.note {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+.content {
+  height: 100%;
+  border: 1px solid var(--content-border-color);
   border-radius: 4px;
-  padding: 0px;
+  padding: 10px;
   margin: 10px;
 }
 
-.note>ul {
+.content>ul {
   padding-left: 0px;
   list-style-type: none;
 }
 
-.note>ul[title]::before {
+.content>ul[title]::before {
   display: block;
   color: #102027;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   text-align: center;
   margin: 10px;
   content: attr(title);
 }
 
-.note>ul>li {
+.content>ul>li {
   font-size: 1rem;
   padding: 10px;
+}
+
+.summary {
+  border: 1px solid var(--content-border-color);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.summary_container {
+  margin: 0px;
+}
+
+.summary_title {
+  color: #439889;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--content-border-color);
+}
+
+.summary_description {
+  color: #003d33;
+  font-size: 0.8rem;
+  text-indent: 0rem;
+  margin: 10px;
+  font-style: italic;
+  border-bottom: 1px solid var(--content-border-color);
 }
 
 .menu {
@@ -55,13 +91,33 @@
 }
 
 .description {
+  width: 70%;
   font-size: 1rem;
+  line-height: 1em;
+  /* max-lines: 2; */
   text-overflow: ellipsis;
-  word-wrap: break-word;
-  white-space: nowrap;
+  word-wrap: normal;
+  /* white-space: nowrap; */
   text-align: right;
-  margin: 10px;
+  margin-left: 10px;
   overflow: hidden;
+}
+
+.description :hover {
+  color: #003d33;
+  text-decoration: underline;
+}
+
+.description :active {
+  color: #003d33;
+  text-transform: uppercase;
+}
+
+.pre {
+  border: 1px solid var(--content-border-color);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -73,7 +129,7 @@
     display: none;
   }
 
-  .note>ul[title]::before {
+  .content>ul[title]::before {
     font-size: 1rem;
   }
 
@@ -83,8 +139,13 @@
     margin: 10px;
   }
 
-  .note>ul>li {
+  .content>ul>li {
     font-size: 0.5rem;
     padding: 10px;
   }
+}
+
+.emphasis {
+  text-decoration: underline;
+  font-size: 3rem;
 }

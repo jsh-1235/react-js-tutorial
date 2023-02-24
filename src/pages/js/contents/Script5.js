@@ -39,7 +39,24 @@ export default function Script5({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>Promise는 비동기 상태를 값으로 다룰 수 있는 객체이다.</div>
+              <div className={styles.summary_description}>프로미스를 사용하면 비동기 프로그래밍을 할 때 동기 프로그래밍 방식으로 코드를 작성할 수 있다.</div>
+              <div className={styles.summary_description}>프로미스가 널리 보급되기 전에는 비동기 프로그래밍 코드인 콜백 패턴이 많이 사용되었다.</div>
+              <div className={styles.summary_description}>ES6에 Promise가 포함되었다.</div>
+              <div className={styles.summary_description}>프로미스를 이용하면 비동기 프로그래밍을 할 때 코드를 순차적으로 작성할 수 있다.</div>
+              <div className={styles.summary_description}>대기중 (pending) : 결과를 기다리는 상태이다.</div>
+              <div className={styles.summary_description}>이행됨 (fulfilled) : 수행이 정상적으로 끝났고 결과값을 가지고 있다.</div>
+              <div className={styles.summary_description}>이행됨 (settled) : 수행이 정상적으로 끝났음을 의미한다.</div>
+              <div className={styles.summary_description}>거부됨 (rejected) : 수행이 비정상적으로 끝났음을 의미한다.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,20 +70,6 @@ export default function Script5({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>Promise는 비동기 상태를 값으로 다룰 수 있는 객체이다.</li>
-          <li>프로미스를 사용하면 비동기 프로그래밍을 할 때 동기 프로그래밍 방식으로 코드를 작성할 수 있다.</li>
-          <li>프로미스가 널리 보급되기 전에는 비동기 프로그래밍 코드인 콜백 패턴이 많이 사용되었다.</li>
-          <li>ES6에 Promise가 포함되었다.</li>
-          <li>프로미스를 이용하면 비동기 프로그래밍을 할 때 코드를 순차적으로 작성할 수 있다.</li>
-          <li>대기중 (pending) : 결과를 기다리는 상태이다.</li>
-          <li>이행됨 (fulfilled) : 수행이 정상적으로 끝났고 결과값을 가지고 있다.</li>
-          <li>이행됨 (settled) : 수행이 정상적으로 끝났음을 의미한다.</li>
-          <li>거부됨 (rejected) : 수행이 비정상적으로 끝났음을 의미한다.</li>
-          <li></li>
         </ul>
       </div>
     </div>

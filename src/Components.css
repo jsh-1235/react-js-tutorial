@@ -49,19 +49,24 @@
 }
 
 .button {
-  min-width: calc(var(--component-font-size) * 6);
+  /* min-width: calc(var(--component-font-size) * 6); */
+  /* width: 100%; */
   min-height: var(--component-height);
   border: none;
   border-radius: var(--component-border-radius);
   background-color: #85bb5c;
   color: white;
   font-size: var(--component-font-size);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-overflow: ellipsis;
   word-wrap: break-word;
   white-space: nowrap;
   padding: 10px;
   overflow: hidden;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .button:hover {
@@ -94,4 +99,9 @@
   :root {
     --component-font-size: 0.5rem;
   }
+}
+
+.jquery-marker {
+  text-decoration: underline;
+  font-size: 3rem;
 }

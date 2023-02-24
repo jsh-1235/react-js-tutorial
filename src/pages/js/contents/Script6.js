@@ -39,7 +39,20 @@ export default function Script6({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>async await는 비동기 프로그래밍을 동기 프로그래밍처럼 작성할 수 있도록 함수에 추가된 기능이다.</div>
+              <div className={styles.summary_description}>프로미스가 JS 표준이 된고 2년 후 (ES2017)에 async await도 JS 표준이 되었다.</div>
+              <div className={styles.summary_description}>프로미스는 객체로 존재하지만 async await는 함수에 적용되는 개념이다.</div>
+              <div className={styles.summary_description}>async 키워드로 작성된 함수는 await 함수이며, 항상 프로미스를 반환한다.</div>
+              <div className={styles.summary_description}>따라서 함수 호출후 then 메서드를 사용할 수 있다.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,15 +66,6 @@ export default function Script6({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>async await는 비동기 프로그래밍을 동기 프로그래밍처럼 작성할 수 있도록 함수에 추가된 기능이다.</li>
-          <li>프로미스가 JS 표준이 된고 2년 후 (ES2017)에 async await도 JS 표준이 되었다.</li>
-          <li>프로미스는 객체로 존재하지만 async await는 함수에 적용되는 개념이다.</li>
-          <li>async 키워드로 작성된 함수는 await 함수이며, 항상 프로미스를 반환한다.</li>
-          <li>따라서 함수 호출후 then 메서드를 사용할 수 있다.</li>
         </ul>
       </div>
     </div>

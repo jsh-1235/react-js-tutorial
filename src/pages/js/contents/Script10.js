@@ -39,7 +39,20 @@ export default function Script10({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>A closure is the combination of a function and the lexical environment within which that function was declared.</div>
+              <div className={styles.summary_description}>Lexical Scoping : Scope is determined by where the function is declared, not when the function is called.</div>
+              <div className={styles.summary_description}>클로저는 내부 함수가 외부 함수의 맥락(context)에 접근할 수 있는 것을 가르킨다.</div>
+              <div className={styles.summary_description}>내부 함수는 외부 함수의 지역 변수에 접근할 수 있는데 외부 함수의 실행이 끝나서 외부 함수가 소멸된 이후에도 내부 함수가 외부 함수의 변수에 접근할 수 있다.</div>
+              <div className={styles.summary_description}>클로저란 내부 함수가 외부 함수의 지역 변수에 접근할 수 있고 외부 함수는 외부 함수의 지역 변수를 사용하는 내부 함수가 소멸될 때까지 소멸되지 않는 특성을 의미한다.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -55,38 +68,64 @@ export default function Script10({ ...props }) {
           })}
         </ul>
       </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>A closure is the combination of a function and the lexical environment within which that function was declared.</li>
-          <li>Lexical Scoping : Scope is determined by where the function is declared, not when the function is called.</li>
-        </ul>
-      </div>
     </div>
   );
 }
 
-const sum = (initial) => {
-  const add = (n) => {
-    return initial + n;
+const sum = (items) => {
+  const square = (n) => {
+    return items.reduce((a, b) => a + b) ** n;
   };
 
-  return add;
+  return square;
 };
 
 const fun1 = () => {
-  console.log("A closure is the combination of a function and the lexical environment within which that function was declared.");
+  console.log(sum([1, 2, 3, 4])(3));
+};
 
-  console.log("Lexical Scoping");
+const fun2 = () => {
+  function outer() {
+    var title = "variable in external function";
 
-  console.log("스코프는 함수를 호출할 때가 아니라 함수를 어디에 선언하였는지에 따라 결정된다.");
+    function inner() {
+      console.log(title);
+    }
 
-  console.log(sum(10)(5));
+    inner();
+  }
+
+  outer();
+};
+
+const fun3 = () => {
+  function outer() {
+    var title = "variable in external function";
+
+    return function inner() {
+      console.log(title);
+    };
+  }
+
+  const inner = outer();
+
+  inner();
 };
 
 const items = [
   {
     title: "Closure 1",
-    description: "",
+    description: "Closure 1",
     func: fun1,
+  },
+  {
+    title: "Closure 2",
+    description: "Closure 2",
+    func: fun2,
+  },
+  {
+    title: "Closure 3",
+    description: "Closure 3",
+    func: fun3,
   },
 ];

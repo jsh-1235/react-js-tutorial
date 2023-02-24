@@ -3,6 +3,7 @@
 :root {
   --footer-hight: 48px;
   --header-hight: calc(48px * 3);
+  --list-width: 30%;
 }
 
 .header {
@@ -19,7 +20,7 @@
 
 .main {
   display: grid;
-  grid-template-columns: 40% 1fr;
+  grid-template-columns: var(--list-width) 1fr;
   gap: 0px 0px;
   align-content: stretch;
   justify-content: stretch;
@@ -46,4 +47,10 @@
   font-size: 1rem;
   text-align: center;
   padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --list-width: 40%;
+  }
 }

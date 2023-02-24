@@ -39,7 +39,18 @@ export default function Script8({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>Variables are containers for storing data (storing data values).</div>
+              <div className={styles.summary_description}>If you want a general rule: always declare variables with const.</div>
+              <div className={styles.summary_description}>If you think the value of the variable can change, use let.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,13 +64,6 @@ export default function Script8({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>Variables are containers for storing data (storing data values).</li>
-          <li>If you want a general rule: always declare variables with const.</li>
-          <li>If you think the value of the variable can change, use let.</li>
         </ul>
       </div>
     </div>

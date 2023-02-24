@@ -39,7 +39,16 @@ export default function Script9({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>Hoisting is JavaScript's default behavior of moving declarations to the top.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,11 +62,6 @@ export default function Script9({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>Hoisting is JavaScript's default behavior of moving declarations to the top.</li>
         </ul>
       </div>
     </div>

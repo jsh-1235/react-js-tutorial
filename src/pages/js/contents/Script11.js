@@ -39,7 +39,17 @@ export default function Script11({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>단축 속성명(Shorthand property names)은 객체 리터털 코드를 간편하게 작성할 목적으로 만들어진 문법이다.</div>
+              <div className={styles.summary_description}>계산된 속성명(Computed property names)은 객체의 속성명을 동적으로 결정하기 위해 나온 문법이다.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,12 +63,6 @@ export default function Script11({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>단축 속성명(Shorthand property names)은 객체 리터털 코드를 간편하게 작성할 목적으로 만들어진 문법이다.</li>
-          <li>계산된 속성명(Computed property names)은 객체의 속성명을 동적으로 결정하기 위해 나온 문법이다.</li>
         </ul>
       </div>
     </div>

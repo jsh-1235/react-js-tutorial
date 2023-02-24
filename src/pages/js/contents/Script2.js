@@ -37,7 +37,20 @@ export default function Script2({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>제너레이터는 함수의 실행을 중간에 멈추고 재개할 수 있는 독특한 기능이다.</div>
+              <div className={styles.summary_description}>실행을 멈출 때 값을 전달할 수 있기 때문에 반복문에서 제너레이터가 전달하는 값을 하나씩 꺼내서 사용할 수 있다.</div>
+              <div className={styles.summary_description}>제너레이터를 사용하면 필요한 순간에 값을 계산해서 전달할 수 있기 때문에 메모리 측면에서 효율적이다.</div>
+              <div className={styles.summary_description}>제너레이터는 값을 전달하는 용도 외에도 다른 함수와 협업 멀티태스킹(Cooperative Multitasking)을 할 수 있다.</div>
+              <div className={styles.summary_description}>제너레이터가 실행을 멈추고 재개 할 수 있기 때문에 멀티테스킹이 가능하다.</div>
+            </div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -51,15 +64,6 @@ export default function Script2({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>제너레이터는 함수의 실행을 중간에 멈추고 재개할 수 있는 독특한 기능이다.</li>
-          <li>실행을 멈출 때 값을 전달할 수 있기 때문에 반복문에서 제너레이터가 전달하는 값을 하나씩 꺼내서 사용할 수 있다.</li>
-          <li>제너레이터를 사용하면 필요한 순간에 값을 계산해서 전달할 수 있기 때문에 메모리 측면에서 효율적이다.</li>
-          <li>제너레이터는 값을 전달하는 용도 외에도 다른 함수와 협업 멀티태스킹(Cooperative Multitasking)을 할 수 있다.</li>
-          <li>제너레이터가 실행을 멈추고 재개 할 수 있기 때문에 멀티테스킹이 가능하다.</li>
         </ul>
       </div>
     </div>

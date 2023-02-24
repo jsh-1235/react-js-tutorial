@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { connect } from "react-redux";
 
-const urls = ["js", "syntax", "api", "dom", "bom"];
+const urls = ["syntax", "js", "api", "dom", "bom"];
 
 function mapStateToProps(state) {
   return {

@@ -39,7 +39,17 @@ export default function Script1({ ...props }) {
     <div className={styles.container}>
       <span className={styles.title}>{props.title}</span>
       <span className={styles.border} />
-      <div className={styles.note}>
+      <div className={styles.content}>
+        <div className={styles.summary}>
+          <details open>
+            <summary>summary</summary>
+            <div className={styles.summary_container}>
+              <div className={styles.summary_title}>Basic Theory</div>
+              <div className={styles.summary_description}>객체 비구조화는 객체의 여러 속성값을 변수로 쉽게 할당 할 수 있는 문법이다.</div>
+            </div>
+            <div className={styles.summary_description}>배열 비구조화에서는 배열의 순서가 중요했지만 객체 비구조화에서는 순서는 무의미 하다.</div>
+          </details>
+        </div>
         <ul title={name.title}>
           {items.map((item) => {
             return (
@@ -53,13 +63,6 @@ export default function Script1({ ...props }) {
               </li>
             );
           })}
-        </ul>
-      </div>
-      <div className={styles.note}>
-        <ul title="Summary">
-          <li>객체 비구조화 (object destructuring)</li>
-          <li>객체 비구조화는 객체의 여러 속성값을 변수로 쉽게 할당 할 수 있는 문법이다.</li>
-          <li>배열 비구조화에서는 배열의 순서가 중요했지만 객체 비구조화에서는 순서는 무의미 하다.</li>
         </ul>
       </div>
     </div>
