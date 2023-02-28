@@ -135,6 +135,16 @@ const fun6 = () => {
   console.log("hasAttribute", target.hasAttribute("href"));
 
   console.log(target.getAttribute("href"));
+
+  // element.setAttribute("class", "Script_title__kh9VV");
+};
+
+const fun7 = () => {
+  const target = document.getElementById("target");
+
+  target.setAttribute("class", "emphasis");
+
+  console.log("class", target.getAttribute("emphasis"));
 };
 
 const items = [
@@ -167,5 +177,10 @@ const items = [
     title: "removeAttribute",
     description: "Removes the named attribute from the current node.",
     func: fun6,
+  },
+  {
+    title: "css",
+    description: "class",
+    func: fun7,
   },
 ];

@@ -60,6 +60,10 @@ export default function Script3({ ...props }) {
             <details open>
               <summary>summary</summary>
               <div id="summary_container" className={styles.summary_container}>
+                <div className={styles.summary_title}>Selector</div>
+                <div className={styles.summary_description}>Tag Selector</div>
+                <div className={styles.summary_description}>Class Selector</div>
+                <div className={styles.summary_description}>ID Selector</div>
                 <div className={styles.summary_title}>CRUD</div>
                 <div id="summary_description" className={styles.summary_description}></div>
               </div>

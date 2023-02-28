@@ -182,6 +182,35 @@ const fun9 = () => {
   console.log(element.classList);
 };
 
+const fun10 = () => {
+  const element = document.getElementById("title");
+
+  element.className = "emphasis";
+
+  console.log(element.classList);
+};
+
+const fun11 = () => {
+  // const items = window.document.querySelectorAll(".list-item .button:nth-child(odd)");
+  // const items = window.document.querySelectorAll(".list-item .button")[10];
+
+  // window.document.querySelectorAll(".list-item .button").forEach((item) => {
+  //   // console.log(item, item.nodeType, item.nodeName, item.hasChildNodes(), item.innerHTML);
+  //   console.log(item.childNodes);
+  // });
+
+  // const items = Array.from(window.document.querySelectorAll(".list-item .button")).filter((item) => item.innerText === "style");
+
+  // const items = Array.from(window.document.querySelectorAll(".list-item .button")).filter((item) => item.innerText === "style");
+  // const items = Array.prototype.filter.call(window.document.querySelectorAll(".list-item .button"), (item) => item.innerText === "style");
+
+  const items = [...window.document.querySelectorAll(".list-item .button")].filter((item) => item.innerText === "style");
+
+  items[0].style.visibility = "hidden";
+
+  console.log(items);
+};
+
 const items = [
   {
     title: "HTMLElement.style.color",
@@ -227,5 +256,15 @@ const items = [
     title: "classList",
     description: "replace",
     func: fun9,
+  },
+  {
+    title: "className",
+    description: "Gets and sets the value of the class attribute of the specified element.",
+    func: fun10,
+  },
+  {
+    title: "style",
+    description: "visibility",
+    func: fun11,
   },
 ];

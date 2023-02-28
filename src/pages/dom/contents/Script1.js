@@ -162,3 +162,11 @@ const items = [
     func: fun3,
   },
 ];
+
+// Critical Rendering Path
+// Dom Tree 구축
+// CSSOM Tree 구축
+// Javascript 실행
+// Render Tree 구축
+// Layout 생성
+// Paint

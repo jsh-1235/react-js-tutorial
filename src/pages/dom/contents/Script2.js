@@ -65,12 +65,34 @@ export default function Script2({ ...props }) {
                 <div className={styles.summary_description}>DOM은 웹페이지에 대한 인터페이스이다.</div>
                 <div className={styles.summary_description}>기본적으로 여러 프로그램들이 페이지의 콘텐츠 및 구조, 그리고 스타일을 읽고 조작할 수 있도록 API를 제공한다.</div>
                 <div className={styles.summary_title}>DOM Tree</div>
-                <div className={styles.summary_description}>Document → Root Element → Element → Attribute or Text</div>
+                <div className={styles.summary_description}>Document node → Element node + Attribute node → Text node</div>
+                <div className={styles.summary_title}>Document Node</div>
+                <div className={styles.summary_description}>DOM Tree에서 최상위 루트 노드를 나타내며, document 객체를 가리킵니다.</div>
+                <div className={styles.summary_description}>HTML 문서 전체를 나타내는 노드이기도 합니다.</div>
+                <div className={styles.summary_description}>window 객체의 document 프로퍼티로 바인딩(연결)이 되어 있어 window.document , document로 참조해 사용할 수 있습니다.</div>
+                <div className={styles.summary_description}>HTML 문서에 이 문서 노드는 오로지 1개만 존재합니다.</div>
+                <div className={styles.summary_title}>Element Node </div>
+                <div className={styles.summary_description}>모든 HTML 요소 (body, h2, div 등)는 이 요소 노드입니다.</div>
+                <div className={styles.summary_description}>속성 노드를 가질 수 있는 유일한 노드로서, 부모-자식 관계를 가지게 되기 때문에 계층적 구조를 이룰 수 있게 됩니다.</div>
+                <div className={styles.summary_title}>Attribute Node</div>
+                <div className={styles.summary_description}>모든 HTML 요소의 속성은 이 속성 노드입니다.</div>
+                <div className={styles.summary_description}>요소 노드에 대한 정보를 가지고 있습니다.</div>
+                <div className={styles.summary_description}>그렇기 때문에 부모 노드가 아닌 해당 노드와 연결(바인딩)이 되어 있습니다.</div>
+                <div className={styles.summary_title}>Text Node</div>
+                <div className={styles.summary_description}>HTML 문서의 모든 텍스트는 이 텍스트 노드라 해도 과언이 아닙니다. </div>
+                <div className={styles.summary_description}>텍스트 노드는 정보를 표현하며, 가장 마지막에 위치하는 자식 노드이기 때문에 잎사귀를 닮았다 해 리프 노드라고 불리기도 합니다.</div>
+                <div className={styles.summary_title}>DOM 객체의 구성 요소</div>
+                <div className={styles.summary_description}>프로퍼티(property) : DOM 객체의 멤버 변수입니다. HTML 태그의 속성을 반영합니다. </div>
+                <div className={styles.summary_description}>메소드(method) : DOM 객체의 멤버 함수입니다. HTML 태그를 제어합니다.</div>
+                <div className={styles.summary_description}>컬렉션(collection) : 정보를 집합적으로 표현하는 일종의 배열입니다. 예를 들어 children 컬렉션은 DOM 객체의 모든 자식 DOM 객체에 대한 주소를 가집니다.</div>
+                <div className={styles.summary_description}>이벤트 리스너(event listener) : HTML 태그에 작성된 이벤트 리스너(onclick, onchange 등)들을 그대로 가집니다.</div>
+                <div className={styles.summary_description}>스타일(style) : 이 프로퍼티를 통해 HTML 태그에 적용된 CSS 스타일 시트에 접근 가능합니다.</div>
+                <div className={styles.summary_title}>DOM Data Type</div>
+                <div className={styles.summary_description}>document : member(프로퍼티 혹은 메서드)가 document 타입의 object를 리턴할 때, 이 object는 root document object 자체입니다. </div>
+                <div className={styles.summary_description}>element : DOM API 의 member에 의해 return 된 element 또는 element 타입의 노드를 의미합니다.</div>
+                <div className={styles.summary_description}>nodeList : nodeList 는 element의 배열입니다.</div>
+                <div className={styles.summary_description}>namedNodeMap : namedNodeMap는 배열과 유사하지만 안의 요소에 접근할 때 name 또는 index로 접근합니다.</div>
                 <div className={styles.summary_description}></div>
-                <div className={styles.summary_title}>Selector</div>
-                <div className={styles.summary_description}>Tag Selector</div>
-                <div className={styles.summary_description}>Class Selector</div>
-                <div className={styles.summary_description}>ID Selector</div>
               </div>
             </details>
           </div>
@@ -130,7 +152,9 @@ const fun4 = () => {
 };
 
 const fun5 = () => {
-  const elements = document.querySelectorAll(".list-item");
+  // const elements = document.querySelectorAll(".list-item");
+
+  const elements = [...document.querySelectorAll(".list-item")];
 
   for (const element of elements) {
     console.log(element);

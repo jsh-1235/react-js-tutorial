@@ -102,6 +102,12 @@
 }
 
 .jquery-marker {
-  text-decoration: underline;
   font-size: 3rem;
+  text-decoration: underline;
+}
+
+.emphasis {
+  font-size: 2rem;
+  text-decoration: underline;
+  text-align: center;
 }

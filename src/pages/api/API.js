@@ -14,6 +14,9 @@ import Script5 from "./contents/Script5";
 import Script6 from "./contents/Script6";
 import Script7 from "./contents/Script7";
 import Script8 from "./contents/Script8";
+import Script9 from "./contents/Script9";
+import Script10 from "./contents/Script10";
+import Script11 from "./contents/Script11";
 
 const pages = [
   {
@@ -47,6 +50,18 @@ const pages = [
   {
     url: "indexedDB",
     page: <Script8 title={"indexedDB"} />,
+  },
+  {
+    url: "cookies",
+    page: <Script9 title={"cookies"} />,
+  },
+  {
+    url: "date",
+    page: <Script10 title={"date"} />,
+  },
+  {
+    url: "modules",
+    page: <Script11 title={"modules"} />,
   },
 ];
 

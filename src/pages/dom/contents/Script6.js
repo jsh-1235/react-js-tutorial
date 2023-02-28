@@ -220,16 +220,22 @@ const fun13 = () => {
 const fun14 = () => {
   const target = window.document.getElementById("target");
 
-  target.outerText = "outerText";
+  target.textContent = "textContent";
 };
 
 const fun15 = () => {
   const target = window.document.getElementById("target");
 
-  target.innerHTML = "<button>innerHTML</button>";
+  target.outerText = "outerText";
 };
 
 const fun16 = () => {
+  const target = window.document.getElementById("target");
+
+  target.innerHTML = "<button>innerHTML</button>";
+};
+
+const fun17 = () => {
   const target = window.document.getElementById("target");
 
   target.outerHTML = "<button>innerHTML</button>";
@@ -302,18 +308,23 @@ const items = [
     func: fun13,
   },
   {
+    title: "textContent",
+    description: "Represents the rendered text content of a node and its descendants.",
+    func: fun14,
+  },
+  {
     title: "outerText",
     description: "When used as a setter it replaces the whole current node with the given text.",
-    func: fun14,
+    func: fun15,
   },
   {
     title: "innerHTML",
     description: "The Element property innerHTML gets or sets the HTML or XML markup contained within the element.",
-    func: fun15,
+    func: fun16,
   },
   {
     title: "outerHTML",
     description: "It can also be set to replace the element with nodes parsed from the given string.",
-    func: fun16,
+    func: fun17,
   },
 ];
