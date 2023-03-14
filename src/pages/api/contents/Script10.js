@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import styles from "../../Script.module.css";
 
+import moment from "moment/moment";
+
 export default function Script10({ ...props }) {
   const [name, setName] = useState({});
   const [description, setDescription] = useState("");
@@ -198,6 +200,41 @@ const fun15 = () => {
   console.log(date);
 };
 
+const fun16 = () => {
+  const date = new Date();
+
+  const times = [date.toLocaleDateString(), date.toLocaleString(undefined, { year: "numeric", month: "2-digit", day: "2-digit", weekday: "long", hour: "2-digit", hour12: false, minute: "2-digit", second: "2-digit" }), date.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }), date.toLocaleDateString("en-ZA"), date.toLocaleDateString("en-CA"), date.toLocaleString("en-US", { timeZone: "America/New_York" }), date.toLocaleString("en-US", { hour: "2-digit", hour12: false, timeZone: "America/New_York" })];
+
+  for (const time of times) {
+    console.log(time);
+  }
+
+  console.log(date.toLocaleString(undefined, { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hour12: false, minute: "2-digit", second: "2-digit" }));
+};
+
+const fun17 = () => {
+  const date = new Date();
+
+  console.log(moment(date).format("yyyy-mm-dd"));
+  console.log(moment(date).format("YYYY-MM-DD"));
+  console.log(moment(date).format("YYYY-MM-DD_HH_mm_ss"));
+};
+
+const fun18 = () => {
+  const date = new Date();
+  const locale = "ko-KR";
+
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "full" }).format(date)}`);
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(date)}`);
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(date)}`);
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "short" }).format(date)}`);
+
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "full", timeStyle: "full" }).format(date)}`);
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "long", timeStyle: "long" }).format(date)}`);
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "medium" }).format(date)}`);
+  console.log(`${new Intl.DateTimeFormat(locale, { dateStyle: "short", timeStyle: "short" }).format(date)}`);
+};
+
 const items = [
   {
     title: "new Date()",
@@ -273,5 +310,20 @@ const items = [
     title: "new Date()",
     description: "setTime()",
     func: fun15,
+  },
+  {
+    title: "new Date()",
+    description: "format",
+    func: fun16,
+  },
+  {
+    title: "new Date()",
+    description: "moment",
+    func: fun17,
+  },
+  {
+    title: "Intl",
+    description: "moment",
+    func: fun18,
   },
 ];
